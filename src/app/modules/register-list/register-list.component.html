@@ -1,0 +1,74 @@
+<div class="container">
+  <p>register list works!</p>
+
+  <h2>Filter</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div fxLayout="row wrap" fxLayoutGap="{{gridView.gap30}}">
+      <div fxFlex="{{gridView.col8}}">
+        <mat-form-field style="width: 100%" appearance="fill">
+          <mat-label for="keyword">Nome</mat-label>
+          <input id="keyword" formControlName="keyword" matInput>
+        </mat-form-field>
+      </div>
+      <div fxFlex="{{gridView.col4}}">
+        <mat-form-field style="width: 100%" appearance="fill">
+          <mat-label>Período</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate formControlName="start" placeholder="Ínicio">
+            <input matEndDate formControlName="end" placeholder="Fim">
+          </mat-date-range-input>
+          <mat-hint align="end">{{getDateFormatString(this._locale)}} – {{getDateFormatString(this._locale)}}</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+
+          <mat-error *ngIf="form.controls.start.hasError('matStartDateInvalid')">Data inicial inválida</mat-error>
+          <mat-error *ngIf="form.controls.end.hasError('matEndDateInvalid')">Data final inválida</mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <p>Range: {{form.controls.start.value}} - {{form.controls.end.value}}</p>
+      <p>
+        <button type="submit" mat-raised-button class="btn btn-primary" [disabled]="!form.valid"
+                (click)="toggleFormat('pt-BR')">pt-BR
+        </button>
+        <button type="submit" mat-raised-button class="btn btn-primary" [disabled]="!form.valid"
+                (click)="toggleFormat('en-US')">en-US
+        </button>
+        <button type="submit" mat-raised-button class="btn btn-primary" (click)="setFilterDate()">reset</button>
+      </p>
+    </div>
+    <p>
+      <button type="submit" class="btn btn-primary" mat-raised-button
+              [disabled]="!form.valid">Buscar
+      </button>
+    </p>
+    <hr/>
+  </form>
+
+
+  <h2>List</h2>
+
+  <mat-list>
+    <div mat-subheader>Folders</div>
+    <mat-list-item *ngFor="let folder of folders">
+      <mat-icon mat-list-icon>folder</mat-icon>
+      <div mat-line>{{folder.name}}</div>
+      <div mat-line> {{folder.updated | date: 'DD/MM/yyyy'}} </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <div mat-subheader>Notes</div>
+    <mat-list-item *ngFor="let note of notes">
+      <mat-icon mat-list-icon>note</mat-icon>
+      <div mat-line>{{note.name}}</div>
+      <div mat-line> {{note.updated | date}} </div>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-paginator [length]="100"
+                 [pageSize]="10"
+                 [pageSizeOptions]="[5, 10, 25, 100]"
+                 aria-label="Select page">
+  </mat-paginator>
+</div>

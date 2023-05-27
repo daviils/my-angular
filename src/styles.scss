@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import 'front/variable';
+@import 'front/theme';
+@import 'front/components/global';
+@import 'front/components/display';
+
+@import 'front/mixins/color';
+@import 'front/mixins/font';
+@import 'front/mixins/grid';
+@import 'front/mixins/spacing';
+@import 'front/mixins/weight';
+
+/* MODAL */
+.cdk-overlay-container {
+  background: rgba(0, 0, 0, .32);
+}

@@ -1,0 +1,44 @@
+<div class="main-container">
+  <mat-toolbar class="main-toolbar" color="primary">
+    <div [ngStyle.gt-md]="{'display': 'none'}">
+      <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div [ngStyle.lt-lg]="{'display': 'none'}">
+      <mat-nav-list class="main-nav" appAccordion>
+        <button mat-button appAccordionLink *ngFor="let menuitem of typesOfShoes" routerLinkActive="selected">
+          <a appAccordionToggle [routerLink]="['/', menuitem.state]" *ngIf="menuitem.type === 'link'">
+            <span>{{ menuitem.name }}</span>
+          </a>
+        </button>
+      </mat-nav-list>
+    </div>
+    <span class="example-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      <span class="mat-h2">{{'welcome' | translate}}, Fulano</span>
+      <mat-icon>arrow_drop_down</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button (click)="handlerCultureLanguage('pt-BR')" mat-menu-item>PT</button>
+      <button (click)="handlerCultureLanguage('en-US')" mat-menu-item>EN</button>
+      <button (click)="handlerCultureLanguage('es-ES')" mat-menu-item>ES</button>
+    </mat-menu>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav id="snav" class="dark-sidebar" fixedTopGap="0">
+      <mat-nav-list class="main-nav main-nav-device" appAccordion>
+        <button mat-button appAccordionLink *ngFor="let menuitem of typesOfShoes" routerLinkActive="selected">
+          <a appAccordionToggle [routerLink]="['/', menuitem.state]" *ngIf="menuitem.type === 'link'">
+            <span>{{ menuitem.name }}</span>
+          </a>
+        </button>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+

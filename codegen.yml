@@ -1,0 +1,14 @@
+overwrite: true
+schema: "https://support-service.pedido-hmlg.com.br/graphql"
+# schema: "http://localhost:3000/graphql"
+documents: "graphql/**/*.graphql"
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript"
+    config:
+      skipTypename: true
+      declarationKind: "class"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"

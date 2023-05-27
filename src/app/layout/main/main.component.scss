@@ -1,0 +1,40 @@
+@use '@angular/material' as mat;
+@import "../../../front/variable";
+
+.main {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+  }
+
+  &-nav {
+    display: flex;
+    padding-top: 0;
+
+    .mat-button {
+
+      &.selected {
+        background-color: mat.get-color-from-palette($secondary, 500);
+        color: mat.get-color-from-palette($secondary, '500-contrast');
+      }
+    }
+
+    &-device {
+      width: 200px;
+      flex-direction: column;
+    }
+  }
+}
+
+.mat-toolbar {
+  min-height: 64px;
+}
+
+.example-sidenav-container {
+  flex-grow: 1;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,25 @@
+@use '@angular/material' as mat;
+
+$color-array: (
+  primary: mat.get-color-from-palette($primary, 900),
+  secondary: mat.get-color-from-palette($secondary, 500),
+  success: $success,
+  info: $info,
+  purple: $purple,
+  warning: $warning,
+  danger: $danger,
+  light: $light,
+  dark: $dark,
+  muted: $muted,
+  white: $white,
+);
+
+@each $color-name, $color-value in $color-array {
+  .text-#{"" + $color-name} {
+    color: $color-value;
+  }
+
+  .bg-#{"" + $color-name} {
+    background-color: $color-value;
+  }
+}

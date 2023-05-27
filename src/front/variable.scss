@@ -1,0 +1,100 @@
+@use '@angular/material' as mat;
+
+$bodyfont: 'Poppins', sans-serif;
+$headingfont: 'Poppins', sans-serif;
+
+//PALETTE
+$mat-primary: (
+  50: #e6eaef,
+  100: #c0cbda,
+  200: #99aac0,
+  300: #7289a6,
+  400: #537095,
+  500: #325886,
+  600: #2b507e,
+  700: #234772,
+  800: #1d3d66,
+  900: #172d4d,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+$mat-secondary: (
+  50: #fef8e1,
+  100: #feecb3,
+  200: #fde081,
+  300: #fcd54e,
+  400: #fcca26,
+  500: #fcc100,
+  600: #fcb300,
+  700: #fca000,
+  800: #fd8f00,
+  900: #fd7000,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$primary: mat.define-palette($mat-primary, 900);
+$secondary: mat.define-palette($mat-secondary, 500);
+
+$bodycolor: #eef5f9;
+$headingtext: #455a64;
+$bodytext: #67757c;
+$sidebar-text: #607d8b;
+$sidebar-icons: #99abb4;
+
+
+$themecolor: #1e88e5;
+
+/*bootstrap Color*/
+$danger: #fc4b6c;
+$success: #26c6da;
+$warning: #ffb22b;
+$info: #1e88e5;
+$inverse: #2f3d4a;
+$muted: #99abb4;
+$dark: #263238;
+$light: #f2f4f8;
+$extra-light: #ebf3f5;
+/*Light colors*/
+$light-danger: #f9e7eb;
+$light-success: #e8fdf8;
+$light-warning: #fff8ec;
+$light-primary: #f1effd;
+$light-info: #e3f3fd;
+$light-inverse: #f6f6f6;
+$light-megna: #e0f2f4;
+
+$danger-dark: #e6294b;
+$success-dark: #1eacbe;
+$warning-dark: #e9ab2e;
+$primary-dark: #6352ce;
+
+/*Normal Color*/
+$white: #ffffff;
+$purple: #7460ee;
+
+/*Extra Variable*/
+$rgt: right;
+$lft: left;
+$border: rgba(120, 130, 140, 0.13);
+$radius: 4px;

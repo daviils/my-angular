@@ -1,0 +1,15 @@
+{
+  "name": "graphql",
+  "schemaPath": "./graphql/schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "https://support-service.pedido-hmlg.com.br/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": true
+      }
+    }
+  }
+}

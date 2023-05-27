@@ -1,0 +1,458 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type AuthType {
+  token: String!
+  user: User!
+}
+
+type Blog {
+  category: BlogCategory
+  content: String!
+  createdAt: DateTime
+  createdBy: User
+  description: String!
+  id: String!
+  tags: [BlogTag!]
+  thump: String
+  title: String
+  url: String
+  youtubeID: String
+}
+
+type BlogCategory {
+  blogs: [Blog!]
+  createdAt: DateTime
+  id: String!
+  name: String
+}
+
+type BlogPage {
+  currentPage: Int!
+  nextPage: Boolean!
+  pageSize: Int!
+  previousPage: Boolean!
+  results: [Blog!]!
+  totalCount: Int!
+  totalPage: Int!
+}
+
+type BlogTag {
+  blog: Blog
+  createdAt: DateTime
+  id: String!
+  name: String
+}
+
+type DefaultMessage {
+  message: String!
+  status: Int!
+}
+
+type EnumType {
+  description: String
+  detail: String
+  id: ID!
+  type: String!
+  value: String!
+}
+
+type Faq {
+  answer: String
+  category: FaqCategory
+  createdAt: DateTime
+  id: String!
+  question: String
+}
+
+type FaqCategory {
+  createdAt: DateTime
+  faqs: [Faq!]
+  id: ID!
+  name: String
+}
+
+type Help {
+  category: HelpCategory
+  content: String!
+  createdAt: DateTime
+  createdBy: User
+  deletedAt: DateTime
+  description: String!
+  id: String!
+  tags: [HelpTag!]
+  thump: String
+  title: String
+  url: String
+  youtubeID: String
+}
+
+type HelpCategory {
+  count: Float
+  createdAt: DateTime
+  deletedAt: DateTime
+  helps: [Help!]
+  id: String!
+  name: String
+}
+
+type HelpPage {
+  currentPage: Int!
+  nextPage: Boolean!
+  pageSize: Int!
+  previousPage: Boolean!
+  results: [Help!]!
+  totalCount: Int!
+  totalPage: Int!
+}
+
+type HelpTag {
+  createdAt: DateTime
+  help: Help
+  id: String!
+  name: String
+}
+
+type ListTicketDTO {
+  currentPage: Int!
+  nextPage: Boolean!
+  pageSize: Int!
+  previousPage: Boolean!
+  results: [Ticket!]!
+  totalCount: Int!
+  totalPage: Int!
+}
+
+type Mutation {
+  closeTicket(data: CloseTicketInput!): DefaultMessage!
+  createBlog(data: CreateBlogInput!): Blog!
+  createBlogCategory(data: CreateBlogCategoryInput!): BlogCategory!
+  createBlogTag(data: CreateBlogTagInput!): BlogTag!
+  "Create new Enum Type"
+  createEnumType(data: CreateEnumTypeInput!): EnumType!
+  createFaq(data: CreateFaqInput!): Faq!
+  createFaqCategory(data: CreateFaqCategoryInput!): FaqCategory!
+  createHelp(data: CreateHelpInput!): Help!
+  createHelpCategory(data: CreateHelpCategoryInput!): HelpCategory!
+  createTicket(data: CreateTicketInput!): Ticket!
+  createTicketComment(data: CreateTicketCommentInput!): TicketComment!
+  "Create new User"
+  createUser(data: CreateUserInput!): User!
+  "Remove User By Id"
+  deleteUser(id: String!): DefaultMessage!
+  login(data: AuthInput!): AuthType!
+  loginSocial(data: AuthSocialInput!): AuthType!
+  removeBlog(id: String!): DefaultMessage!
+  removeBlogCategory(id: String!): DefaultMessage!
+  removeBlogTag(id: String!): DefaultMessage!
+  removeEnumType(id: String!): DefaultMessage!
+  removeFaq(id: String!): DefaultMessage!
+  removeFaqCategory(id: String!): DefaultMessage!
+  removeHelp(id: String!): DefaultMessage!
+  removeHelpCategory(id: String!): DefaultMessage!
+  removeHelpTag(id: String!): DefaultMessage!
+  removeTicket(id: String!): DefaultMessage!
+  removeTicketComment(id: String!): DefaultMessage!
+  updateBlog(data: UpdateBlogInput!): Blog!
+  updateBlogCategory(data: UpdateBlogCategoryInput!): BlogCategory!
+  updateBlogTag(data: UpdateBlogTagInput!): BlogTag!
+  updateEnumType(data: UpdateEnumTypeInput!): EnumType!
+  updateFaq(data: UpdateFaqInput!): Faq!
+  updateFaqCategory(data: UpdateFaqCategoryInput!): FaqCategory!
+  updateHelp(data: UpdateHelpInput!): Help!
+  updateHelpCategory(data: UpdateHelpCategoryInput!): HelpCategory!
+  updateTicket(data: UpdateTicketInput!): Ticket!
+  updateTicketComment(data: UpdateTicketCommentInput!): TicketComment!
+  "Update User"
+  updateUser(data: UpdateUserInput!, id: String!): User!
+}
+
+type Query {
+  blog(id: String!): Blog!
+  blogByUrl(url: String!): Blog!
+  blogCategories: [BlogCategory!]!
+  blogCategory(id: String!): BlogCategory!
+  blogTag(id: String!): BlogTag!
+  blogTags: [BlogTag!]!
+  blogs: [Blog!]!
+  count: Float!
+  "Return User Logged"
+  currentUser: User!
+  enumByType(type: String!): [EnumType!]!
+  enumType(id: String!): EnumType!
+  enumTypes: [EnumType!]!
+  faq(id: String!): Faq!
+  faqCategories: [FaqCategory!]!
+  faqCategory(id: String!): FaqCategory!
+  faqs: [Faq!]!
+  help(id: String!): Help!
+  helpByUrl(url: String!): Help!
+  helpCategories: [HelpCategory!]!
+  helpCategory(id: String!): HelpCategory!
+  helpTag(id: String!): HelpTag!
+  helps: [Help!]!
+  latestTopics: [Blog!]!
+  searchBlog(data: SearchBlogInput!): BlogPage!
+  searchHelp(data: SearchHelpInput!): HelpPage!
+  searchHelpByCategory(categoryId: String!, page: Float = 1.0): HelpPage!
+  searchTicket(data: SearchTicketInput!): ListTicketDTO!
+  ticket(id: String!): Ticket!
+  ticketComment(id: String!): TicketComment!
+  ticketComments: [TicketComment!]!
+  tickets(filter: String = "", skip: Int = 1): ListTicketDTO!
+  "Return User By Id"
+  user(id: String!): User!
+  "Return User By Email"
+  userByEmail(email: String!): User!
+  "Return All Users"
+  users(page: Int = 1): UserPage!
+}
+
+type Ticket {
+  closeDate: DateTime
+  closeJustification: String
+  closedBy: User
+  code: String
+  comment: [TicketComment!]
+  createdAt: DateTime
+  createdBy: User
+  deletedAt: DateTime
+  description: String!
+  id: String!
+  managerBy: User
+  status: String
+  title: String
+  updatedAt: DateTime
+}
+
+type TicketComment {
+  createdAt: DateTime
+  createdBy: User
+  id: String!
+  message: String!
+  ticket: Ticket
+}
+
+type User {
+  createBlog: Blog
+  createHelp: Help
+  createdAt: DateTime!
+  deletedAt: DateTime
+  email: String!
+  id: ID!
+  name: String!
+  photo: String
+  profile: String!
+  updatedAt: DateTime!
+}
+
+type UserPage {
+  currentPage: Int!
+  nextPage: Boolean!
+  pageSize: Int!
+  previousPage: Boolean!
+  totalCount: Int!
+  totalPage: Int!
+  users: [User!]!
+}
+
+input AuthInput {
+  email: String!
+  password: String!
+}
+
+input AuthSocialInput {
+  code: String!
+}
+
+input CloseTicketInput {
+  id: String!
+  justification: String!
+}
+
+input CreateBlogCategoryInput {
+  name: String!
+}
+
+input CreateBlogCategoryMockInput {
+  id: String!
+}
+
+input CreateBlogInput {
+  category: CreateBlogCategoryMockInput!
+  content: String!
+  description: String!
+  tag: [String!]!
+  title: String!
+  youtubeID: String
+}
+
+input CreateBlogMockInput {
+  id: String!
+}
+
+input CreateBlogTagInput {
+  blog: CreateBlogMockInput!
+  name: String!
+}
+
+input CreateEnumTypeInput {
+  description: String
+  detail: String
+  type: String!
+  value: String!
+}
+
+input CreateFaqCategoryInput {
+  name: String!
+}
+
+input CreateFaqCategoryMockInput {
+  id: String!
+}
+
+input CreateFaqInput {
+  answer: String!
+  category: CreateFaqCategoryMockInput!
+  question: String!
+}
+
+input CreateHelpCategory {
+  id: String!
+}
+
+input CreateHelpCategoryInput {
+  name: String!
+}
+
+input CreateHelpInput {
+  category: CreateHelpCategory
+  content: String!
+  description: String!
+  tag: [String!]
+  title: String
+  youtubeID: String
+}
+
+input CreateTicketCommentInput {
+  message: String!
+  ticket: CreateTicketMockInput!
+}
+
+input CreateTicketInput {
+  description: String!
+  title: String!
+}
+
+input CreateTicketMockInput {
+  id: String!
+}
+
+input CreateUserInput {
+  email: String!
+  id: String!
+  name: String!
+  photo: String
+}
+
+input SearchBlogInput {
+  keyword: String
+  page: Int = 1
+  tag: String
+}
+
+input SearchHelpInput {
+  category: String
+  keyword: String
+  page: Int = 1
+  tag: String
+}
+
+input SearchTicketInput {
+  keyword: String
+  page: Int = 1
+  "'open'|'answered'|'await'|'closed'"
+  status: String
+}
+
+input UpdateBlogCategoryInput {
+  id: String!
+  name: String
+}
+
+input UpdateBlogInput {
+  category: CreateBlogCategoryMockInput
+  content: String
+  description: String
+  id: String!
+  tag: [String!]
+  title: String
+  youtubeID: String
+}
+
+input UpdateBlogTagInput {
+  blog: CreateBlogMockInput
+  id: String!
+  name: String
+}
+
+input UpdateEnumTypeInput {
+  description: String
+  detail: String
+  id: String!
+  type: String
+  value: String
+}
+
+input UpdateFaqCategoryInput {
+  id: String!
+  name: String
+}
+
+input UpdateFaqInput {
+  answer: String
+  category: CreateFaqCategoryMockInput
+  id: String!
+  question: String
+}
+
+input UpdateHelpCategoryInput {
+  id: String!
+  name: String
+}
+
+input UpdateHelpInput {
+  category: CreateHelpCategory
+  content: String
+  description: String
+  id: String!
+  tag: [String!]
+  title: String
+  youtubeID: String
+}
+
+input UpdateTicketCommentInput {
+  id: String!
+  message: String
+  ticket: CreateTicketMockInput
+}
+
+input UpdateTicketInput {
+  description: String
+  id: String!
+  title: String
+}
+
+input UpdateUserInput {
+  email: String
+  name: String
+  photo: String
+}
+
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime
