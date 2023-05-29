@@ -9,5 +9,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent{
+  title = 'my-angular'
 
 }
