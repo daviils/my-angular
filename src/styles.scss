@@ -11,14 +11,7 @@ body {
 
 @import 'front/variable';
 @import 'front/theme';
-@import 'front/components/global';
-@import 'front/components/display';
 
-@import 'front/mixins/color';
-@import 'front/mixins/font';
-@import 'front/mixins/grid';
-@import 'front/mixins/spacing';
-@import 'front/mixins/weight';
 
 /* MODAL */
 .cdk-overlay-container {

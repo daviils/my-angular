@@ -28,6 +28,7 @@ $mat-primary: (
     900: white,
   )
 );
+
 $mat-secondary: (
   50: #fef8e1,
   100: #feecb3,
@@ -56,42 +57,10 @@ $mat-secondary: (
 $primary: mat.define-palette($mat-primary, 900);
 $secondary: mat.define-palette($mat-secondary, 500);
 
-$bodycolor: #eef5f9;
-$headingtext: #455a64;
-$bodytext: #67757c;
-$sidebar-text: #607d8b;
-$sidebar-icons: #99abb4;
-
-
-$themecolor: #1e88e5;
-
-/*bootstrap Color*/
-$danger: #fc4b6c;
-$success: #26c6da;
-$warning: #ffb22b;
-$info: #1e88e5;
-$inverse: #2f3d4a;
-$muted: #99abb4;
-$dark: #263238;
-$light: #f2f4f8;
-$extra-light: #ebf3f5;
-/*Light colors*/
-$light-danger: #f9e7eb;
-$light-success: #e8fdf8;
-$light-warning: #fff8ec;
-$light-primary: #f1effd;
-$light-info: #e3f3fd;
-$light-inverse: #f6f6f6;
-$light-megna: #e0f2f4;
-
 $danger-dark: #e6294b;
 $success-dark: #1eacbe;
 $warning-dark: #e9ab2e;
 $primary-dark: #6352ce;
-
-/*Normal Color*/
-$white: #ffffff;
-$purple: #7460ee;
 
 /*Extra Variable*/
 $rgt: right;

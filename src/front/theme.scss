@@ -23,17 +23,18 @@ $my-custom-typography: mat.define-typography-config(
 
 //to color
 @include mat.all-component-themes($light-theme);
+
 //to typography
 @include mat.core($my-custom-typography);
 
 //DARK MODE
-//.dark-mode {
-//  $dark-theme: mat.define-dark-theme((
-//    color: (
-//      primary: mat.define-palette($mat-primary, 800),
-//      accent: mat.define-palette($mat-secondary, 500),
-//      warn: mat.define-palette(mat.$red-palette, 500),
-//    ),
-//  ));
-//  @include mat.all-component-colors($dark-theme);
-//}
+.dark-mode {
+  $dark-theme: mat.define-dark-theme((
+    color: (
+      primary: mat.define-palette($mat-primary, 800),
+      accent: mat.define-palette($mat-secondary, 500),
+      warn: mat.define-palette(mat.$red-palette, 500),
+    ),
+  ));
+  @include mat.all-component-colors($dark-theme);
+}

@@ -14,16 +14,8 @@ declare var $: any;
 export class MainComponent extends BaseComponent implements OnInit {
   language = super.accessLanguage.length === 0 ? 'pt-BR' : super.accessLanguage;
   slider: any = 50;
-  typesOfShoes: any[] = [
-    {state: 'home', type: 'link', name: 'Home'},
-    {state: 'register', type: 'link', name: 'Register'},
-    {state: 'register-list', type: 'link', name: 'Register List'},
-    {state: 'typography', type: 'link', name: 'Typography'},
-  ];
-
   constructor(public router: Router,
               public translate: TranslateService,
-              public changeDetectorRef: ChangeDetectorRef,
               public media: MediaMatcher) {
     super(router, translate)
     translate.addLangs(['en-US', 'es-ES', 'pt-BR']);
@@ -32,17 +24,6 @@ export class MainComponent extends BaseComponent implements OnInit {
 
   ngOnInit(): void {
     super.handlerCultureLanguage(this.language);
-  }
-
-  ngOnDestroy(): void {
-  }
-
-  onSubmitSlider(): number {
-    return this.slider.value
-  }
-
-  handlerMode(event: any) {
-    $('#mode').toggleClass('dark-mode')
   }
 
 }
