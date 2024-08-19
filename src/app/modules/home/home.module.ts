@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {HomeComponent} from './home.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./home.routing";
+import {FlexModule} from "@angular/flex-layout";
+import {CardModule} from "../../component/card/card.module";
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import {routes} from "./home.routing";
   ],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    FlexModule,
+    CardModule,
   ]
 })
 export class HomeModule {

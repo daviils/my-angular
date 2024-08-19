@@ -17,6 +17,7 @@ import {TranslateLoader, TranslateModule, TranslateService} from "@ngx-translate
 import {httpTranslateLoader} from "../../app.module";
 import {HttpClient} from "@angular/common/http";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {NavBarModule} from "../../component/nav-bar/nav-bar.module";
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
         useFactory: httpTranslateLoader,
         deps: [HttpClient]
       }
-    })
+    }),
+    NavBarModule
   ],
   providers: [
     {

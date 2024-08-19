@@ -1,0 +1,11 @@
+@import "../../../front/variable";
+
+.nav-bar{
+  background-color: $background;
+  padding: 15px;
+  border-radius: 20px;
+  min-width: 200px;
+
+  display: flex;
+  justify-content: space-between;
+}
