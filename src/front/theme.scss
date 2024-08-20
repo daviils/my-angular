@@ -5,8 +5,8 @@
 //LIGHT MODE
 $light-theme: mat.define-light-theme((
   color: (
-    primary: $primary,
-    accent: $secondary,
+    primary: $primary-palette,
+    accent: $secondary-palette,
     warn: mat.define-palette(mat.$red-palette, 500),
   )
 ));

@@ -18,35 +18,37 @@ import {httpTranslateLoader} from "../../app.module";
 import {HttpClient} from "@angular/common/http";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {NavBarModule} from "../../component/nav-bar/nav-bar.module";
+import {HeaderModule} from "../../component/header/header.module";
 
 @NgModule({
   declarations: [
     MainComponent
   ],
-  imports: [
-    RouterModule.forChild(routes),
-    ReactiveFormsModule,
-    CommonModule,
-    FormsModule,
-    MatButtonModule,
-    MatSliderModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatMenuModule,
-    MatSidenavModule,
-    FlexLayoutModule,
-    MatListModule,
-    MatSlideToggleModule,
-    MatButtonToggleModule,
-    TranslateModule.forRoot({
-      loader: {
-        provide: TranslateLoader,
-        useFactory: httpTranslateLoader,
-        deps: [HttpClient]
-      }
-    }),
-    NavBarModule
-  ],
+    imports: [
+        RouterModule.forChild(routes),
+        ReactiveFormsModule,
+        CommonModule,
+        FormsModule,
+        MatButtonModule,
+        MatSliderModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatMenuModule,
+        MatSidenavModule,
+        FlexLayoutModule,
+        MatListModule,
+        MatSlideToggleModule,
+        MatButtonToggleModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: httpTranslateLoader,
+                deps: [HttpClient]
+            }
+        }),
+        NavBarModule,
+        HeaderModule
+    ],
   providers: [
     {
       provide: TranslateLoader,

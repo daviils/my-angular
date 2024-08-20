@@ -11,7 +11,6 @@ import {FormsModule} from "@angular/forms";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {AuthInterceptor} from "./core/auth/auth.interceptor";
-import {MatButtonToggleModule} from "@angular/material/button-toggle";
 
 export function httpTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'assets/i18n/', '.json');
