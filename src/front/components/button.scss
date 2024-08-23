@@ -1,0 +1,18 @@
+.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  color: var(--md-sys-color-on-background);
+
+  &-primary {
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface);
+  }
+
+  &-surface {
+    background-color: var(--md-sys-color-surface-container-low);
+    color: var(--md-sys-color-on-surface);
+  }
+}
+
+

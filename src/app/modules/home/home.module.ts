@@ -4,21 +4,21 @@ import {HomeComponent} from './home.component';
 import {RouterModule} from "@angular/router";
 import {routes} from "./home.routing";
 import {FlexModule} from "@angular/flex-layout";
-import {CardModule} from "../../component/card/card.module";
 import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
 
 
 @NgModule({
   declarations: [
     HomeComponent
   ],
-    imports: [
-        RouterModule.forChild(routes),
-        CommonModule,
-        FlexModule,
-        CardModule,
-        MatIconModule,
-    ]
+  imports: [
+    RouterModule.forChild(routes),
+    CommonModule,
+    FlexModule,
+    MatIconModule,
+    MatInputModule,
+  ]
 })
 export class HomeModule {
 }

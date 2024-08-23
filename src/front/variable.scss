@@ -2,11 +2,9 @@
 
 
 /* Color Theme Swatches in Hex */
-$primary-color: #011F26;
-$secondary-color: #F2A71B;
-$tertiary-color: #025E73;
-$neutral-color: #BFB78F;
-$neutral-variant-color: #A5A692;
+$primary-color: var(--md-sys-color-primary);
+$secondary-color: var(--md-sys-color-secondary);
+$tertiary-color: var(--md-sys-color-tertiary);
 
 //PALETTE
 $mat-primary: (

@@ -1,21 +1,19 @@
-
 html, body {
-  height: 100%;
   font-family: 'Roboto', sans-serif;
 }
 
 body {
   margin: 0;
   font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
 }
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0 0 16px;
-}
-
 
 @import 'front/variable';
 @import 'front/theme';
 
-@import 'front/container';
-@import 'front/button';
+@import 'front/components/container';
+@import 'front/components/heander';
+@import 'front/components/nav-bar';
+@import 'front/components/button';
