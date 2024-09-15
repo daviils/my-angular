@@ -1,29 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './header.component';
-import {AngularSvgIconModule} from "angular-svg-icon";
+import { HomeCardComponent } from './home-card.component';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {AvatarModule} from "../avatar/avatar.module";
-import {SearchModule} from "../search/search.module";
 import {RouterLink, RouterLinkWithHref} from "@angular/router";
 
 
 
 @NgModule({
     declarations: [
-        HeaderComponent
+        HomeCardComponent
     ],
     exports: [
-        HeaderComponent
+        HomeCardComponent
     ],
   imports: [
     CommonModule,
-    AngularSvgIconModule.forRoot(),
     FlexLayoutModule,
     AvatarModule,
-    SearchModule,
-    RouterLink,
     RouterLinkWithHref,
+    RouterLink
   ]
 })
-export class HeaderModule { }
+export class HomeCardModule { }

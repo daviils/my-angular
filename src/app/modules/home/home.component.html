@@ -1,12 +1,16 @@
+<app-header></app-header>
+
 <div class="container">
   <div fxLayout="row wrap" fxLayoutGap="20px grid">
-    <ng-container *ngFor="let x of [].constructor(10)">
-<!--      <div fxFlex="100" fxFlex.gt-xs="33.33" fxFlex.gt-sm="20">-->
-<!--        <mat-form-field>-->
-<!--          <mat-label>Favorite food</mat-label>-->
-<!--          <input matInput placeholder="Ex. Pizza" value="Sushi">-->
-<!--        </mat-form-field>-->
-<!--      </div>-->
-    </ng-container>
+    <div *ngFor="let x of[].constructor(10)"
+         fxFlex.lt-sm="100"
+         fxFlex.lt-md="50"
+         fxFlex.lt-lg="33.33"
+         fxFlex.lt-xl="20"
+         fxFlex="16.666">
+      <app-home-card></app-home-card>
+    </div>
   </div>
 </div>
+
+<app-nav-bar></app-nav-bar>

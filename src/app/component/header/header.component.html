@@ -1,19 +1,15 @@
-<nav class="container">
-  <div class="header">
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+<nav class="header">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <a href="javascript:void(0)" routerLink="/home">
       <svg-icon [svgStyle]="{'width':'150px'}" src="assets/svg/logo-text.svg"></svg-icon>
+    </a>
 
-      <div fxLayout="row" fxLayoutGap="15px">
-        <a href="javascript:void(0)" class="btn">Why Fudo?</a>
-        <a href="javascript:void(0)" class="btn">Services</a>
-        <a href="javascript:void(0)" class="btn">Menu</a>
-        <a href="javascript:void(0)" class="btn">Contact</a>
-      </div>
+    <app-search></app-search>
 
-      <div>
-        <a href="javascript:void(0)" class="btn btn-primary">Login</a>
-      </div>
+    <div>
+      <app-avatar src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"></app-avatar>
+<!--      <a href="javascript:void(0)" class="btn btn-primary">Login</a>-->
     </div>
-
   </div>
+
 </nav>
